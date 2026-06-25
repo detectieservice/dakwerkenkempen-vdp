@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>detectieservice · Repository Index</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2430; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --accent2:#3fb950;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.5}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{padding:48px 24px 28px;background:linear-gradient(160deg,#161b22,#0d1117);
+    border-bottom:1px solid var(--border)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header h1{margin:0 0 6px;font-size:30px}
+  header p{margin:0;color:var(--muted)}
+  .stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:12px 18px;min-width:120px}
+  .stat b{display:block;font-size:22px}
+  .stat span{color:var(--muted);font-size:13px}
+  .controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:26px 0 8px}
+  #search{flex:1;min-width:220px;background:var(--panel);border:1px solid var(--border);
+    color:var(--text);padding:10px 14px;border-radius:8px;font-size:15px}
+  #search:focus{outline:none;border-color:var(--accent)}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 24px}
+  .fbtn{background:var(--panel);border:1px solid var(--border);color:var(--muted);
+    padding:7px 13px;border-radius:20px;font-size:13px;cursor:pointer;transition:.15s}
+  .fbtn:hover{color:var(--text);border-color:var(--accent)}
+  .fbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;padding-bottom:60px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;
+    padding:18px;display:flex;flex-direction:column;transition:.15s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card h3{margin:0;font-size:17px;word-break:break-word}
+  .badge{font-size:11px;padding:2px 8px;border-radius:12px;font-weight:600}
+  .badge.fork{background:#1f6feb33;color:#58a6ff}
+  .badge.arch{background:#9e6a0333;color:#d29922}
+  .badge.tpl{background:#8957e533;color:#bc8cff}
+  .badge.pages{background:#23863633;color:#3fb950}
+  .desc{color:var(--muted);font-size:14px;margin:10px 0 12px;flex:0 0 auto;min-height:38px}
+  .topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .topic{background:var(--panel2);border:1px solid var(--border);color:var(--accent);
+    font-size:11px;padding:2px 8px;border-radius:10px}
+  .meta{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+  .meta li{display:flex;justify-content:space-between;font-size:12.5px;border-bottom:1px dashed var(--border);padding-bottom:3px}
+  .meta span{color:var(--muted)}
+  .links{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px}
+  table.sum{border-collapse:collapse;margin-top:10px}
+  table.sum td{border:1px solid var(--border);padding:6px 14px;font-size:14px}
+  table.sum tr td:last-child{text-align:right;color:var(--accent)}
+  .empty{color:var(--muted);padding:40px;text-align:center;grid-column:1/-1;display:none}
+  footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;
+    padding:24px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>📁 detectieservice — Repository Index</h1>
+    <p>An overview and description of all public repositories on
+       <a href="https://github.com/detectieservice?tab=repositories" target="_blank" rel="noopener">github.com/detectieservice</a>.</p>
+    <div class="stats">
+      <div class="stat"><b>34</b><span>Repositories</span></div>
+      <div class="stat"><b>4</b><span>Categories</span></div>
+      <div class="stat"><b>0</b><span>Total stars</span></div>
+      <div class="stat"><b>HTML</b><span>Primary language</span></div>
+    </div>
+    <table class="sum"><tr><td>Dakwerken Kempen sites</td><td>9</td></tr><tr><td>Static mirrors</td><td>15</td></tr><tr><td>DSKempen / clones</td><td>7</td></tr><tr><td>Other</td><td>3</td></tr></table>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="controls">
+    <input id="search" type="search" placeholder="🔍 Search repositories by name or description…" autocomplete="off">
+  </div>
+  <div class="filters"><button class="fbtn active" data-filter="all">All (34)</button><button class="fbtn" data-filter="Dakwerken Kempen sites">Dakwerken Kempen sites (9)</button><button class="fbtn" data-filter="Static mirrors">Static mirrors (15)</button><button class="fbtn" data-filter="DSKempen / clones">DSKempen / clones (7)</button><button class="fbtn" data-filter="Other">Other (3)</button></div>
+  <section class="grid" id="grid">
+      <article class="card" data-name="dsk-website2" data-cat="Other" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dsk-website2" target="_blank" rel="noopener">dsk-website2</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">No description provided.</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>25 Jun 2026</b></li>
+          <li><span>Created</span><b>25 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>340 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dsk-website2" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dsk-website" data-cat="Other" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dsk-website" target="_blank" rel="noopener">dsk-website</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">No description provided.</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>25 Jun 2026</b></li>
+          <li><span>Created</span><b>25 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>336 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dsk-website" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dskempen-clone-5" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dskempen-clone-5" target="_blank" rel="noopener">dskempen-clone-5</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Copy of detectieservice.github.io (DSKempen)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7936 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dskempen-clone-5" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-vloerservice" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-vloerservice" target="_blank" rel="noopener">dakwerkenkempen-vloerservice</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-vloerservice) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-vloerservice" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-vdp" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-vdp" target="_blank" rel="noopener">dakwerkenkempen-vdp</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-vdp) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-vdp" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-parking-diamant" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-parking-diamant" target="_blank" rel="noopener">dakwerkenkempen-parking-diamant</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-parking-diamant) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-parking-diamant" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-metalen" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-metalen" target="_blank" rel="noopener">dakwerkenkempen-metalen</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-metalen) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-metalen" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-marlier" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-marlier" target="_blank" rel="noopener">dakwerkenkempen-marlier</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-marlier) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-marlier" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-floorcouture" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-floorcouture" target="_blank" rel="noopener">dakwerkenkempen-floorcouture</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-floorcouture) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-floorcouture" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-dimar" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-dimar" target="_blank" rel="noopener">dakwerkenkempen-dimar</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-dimar) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-dimar" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-aralea" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-aralea" target="_blank" rel="noopener">dakwerkenkempen-aralea</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-aralea) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>29 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-aralea" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenkempen-allcarrent" data-cat="Dakwerken Kempen sites" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenkempen-allcarrent" target="_blank" rel="noopener">dakwerkenkempen-allcarrent</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Dakwerken Kempen (dakwerkenkempen-allcarrent) — dakwerkenkempen.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>27 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenkempen-allcarrent" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="floorcouture" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/floorcouture" target="_blank" rel="noopener">floorcouture</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of floorcouture.be (small version)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>200932 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/floorcouture" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="aralea" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/aralea" target="_blank" rel="noopener">aralea</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of aralea.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>68137 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/aralea" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="marlierhaarden" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/marlierhaarden" target="_blank" rel="noopener">marlierhaarden</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.marlierhaarden.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>17819 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/marlierhaarden" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="allcarrent" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/allcarrent" target="_blank" rel="noopener">allcarrent</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.allcarrent.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>15173 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/allcarrent" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="parking-diamant" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/parking-diamant" target="_blank" rel="noopener">parking-diamant</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of parking-diamant.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>11255 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/parking-diamant" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="vloerservice" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/vloerservice" target="_blank" rel="noopener">vloerservice</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of vloerservice.com</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>6797 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/vloerservice" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="metalenvandenaudenaerde" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/metalenvandenaudenaerde" target="_blank" rel="noopener">metalenvandenaudenaerde</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of metalenvandenaudenaerde.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>5500 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/metalenvandenaudenaerde" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dimar" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dimar" target="_blank" rel="noopener">dimar</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.dimar.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>24 Jun 2026</b></li>
+          <li><span>Created</span><b>24 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>4717 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dimar" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="hus-dakbouw" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/hus-dakbouw" target="_blank" rel="noopener">hus-dakbouw</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of hus-dakbouw.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>543 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/hus-dakbouw" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerken-hendrickx" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerken-hendrickx" target="_blank" rel="noopener">dakwerken-hendrickx</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.dakwerken-hendrickx.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>100226 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerken-hendrickx" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dakwerkenvandeneynden" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dakwerkenvandeneynden" target="_blank" rel="noopener">dakwerkenvandeneynden</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.dakwerkenvandeneynden.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>284 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dakwerkenvandeneynden" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="sbs-pro" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/sbs-pro" target="_blank" rel="noopener">sbs-pro</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.sbs-pro.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>12495 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/sbs-pro" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="gjtimmerwerken" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/gjtimmerwerken" target="_blank" rel="noopener">gjtimmerwerken</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of www.gjtimmerwerken.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>2759 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/gjtimmerwerken" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="vdphomesolutions" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/vdphomesolutions" target="_blank" rel="noopener">vdphomesolutions</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of vdphomesolutions.be</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>98262 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/vdphomesolutions" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dskempen-clone-4" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dskempen-clone-4" target="_blank" rel="noopener">dskempen-clone-4</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Copy of detectieservice.github.io (DSKempen)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7933 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dskempen-clone-4" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dskempen-clone-3" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dskempen-clone-3" target="_blank" rel="noopener">dskempen-clone-3</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Copy of detectieservice.github.io (DSKempen)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7933 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dskempen-clone-3" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dskempen-clone-2" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dskempen-clone-2" target="_blank" rel="noopener">dskempen-clone-2</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Copy of detectieservice.github.io (DSKempen)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7933 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dskempen-clone-2" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="dskempen-clone-1" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/dskempen-clone-1" target="_blank" rel="noopener">dskempen-clone-1</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Copy of detectieservice.github.io (DSKempen)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7933 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/dskempen-clone-1" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="barina" data-cat="Other" data-lang="—">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/barina" target="_blank" rel="noopener">barina</a></h3>
+          
+        </div>
+        <p class="desc">No description provided.</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>—</b></li>
+          <li><span>Updated</span><b>23 Jun 2026</b></li>
+          <li><span>Created</span><b>23 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>0 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/barina" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="roofrepair-premium" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/roofrepair-premium" target="_blank" rel="noopener">roofrepair-premium</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Roof Repair Kempen — premium architecture-style site</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>21 Jun 2026</b></li>
+          <li><span>Created</span><b>21 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>1953 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/roofrepair-premium" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="roofrepair" data-cat="Static mirrors" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/roofrepair" target="_blank" rel="noopener">roofrepair</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">Static mirror of dskempen.be (copy of detectieservice.github.io)</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>21 Jun 2026</b></li>
+          <li><span>Created</span><b>21 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>1939 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/roofrepair" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+      <article class="card" data-name="detectieservice.github.io" data-cat="DSKempen / clones" data-lang="HTML">
+        <div class="card-head">
+          <h3><a href="https://github.com/detectieservice/detectieservice.github.io" target="_blank" rel="noopener">detectieservice.github.io</a></h3>
+          <span class="badge pages">Pages</span>
+        </div>
+        <p class="desc">DSKempen</p>
+        <div class="topics"></div>
+        <ul class="meta">
+          <li><span>Language</span><b>HTML</b></li>
+          <li><span>Updated</span><b>21 Jun 2026</b></li>
+          <li><span>Created</span><b>21 Jun 2026</b></li>
+          <li><span>Stars</span><b>0</b></li>
+          <li><span>Issues</span><b>0</b></li>
+          <li><span>Size</span><b>7933 KB</b></li>
+        </ul>
+        <div class="links">
+          <a class="hl" href="https://github.com/detectieservice/detectieservice.github.io" target="_blank" rel="noopener">↗ Repository</a>
+          
+        </div>
+      </article>
+    <div class="empty" id="empty">No repositories match your search.</div>
+  </section>
+</main>
+
+<footer>
+  Generated 25 June 2026 17:06 UTC · Data from the GitHub API · 34 repositories listed.
+</footer>
+
+<script>
+  const cards=[...document.querySelectorAll('.card')];
+  const search=document.getElementById('search');
+  const empty=document.getElementById('empty');
+  const fbtns=[...document.querySelectorAll('.fbtn')];
+  let activeFilter='all';
+  function apply(){
+    const q=search.value.trim().toLowerCase();
+    let shown=0;
+    cards.forEach(c=>{
+      const matchText=!q || c.dataset.name.includes(q) || c.querySelector('.desc').textContent.toLowerCase().includes(q);
+      const matchCat=activeFilter==='all' || c.dataset.cat===activeFilter;
+      const ok=matchText&&matchCat;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  search.addEventListener('input',apply);
+  fbtns.forEach(b=>b.addEventListener('click',()=>{
+    fbtns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    activeFilter=b.dataset.filter;
+    apply();
+  }));
+</script>
+</body>
+</html>
